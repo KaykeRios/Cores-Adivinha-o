@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação de Cores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+        }
+        .color-button {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333; 
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .color-button:hover {
+            transform: scale(1.1); 
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Adivinhação de Cores</h1>
+    <p>Escolha uma cor clicando em um quadrado:</p>
+    <div class="grid" id="colorGrid"></div>
+    <div class="message" id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
