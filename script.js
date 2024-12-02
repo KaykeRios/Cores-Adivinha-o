@@ -8,10 +8,12 @@ const colors = [
     { nome: "preto", css: "black" },
     { nome: "branco", css: "white" },
     { nome: "cinza", css: "gray" },
-    { nome: "rosa", css: "pink" }
+    { nome: "rosa", css: "pink" },
+    { nome: "marrom", css: "brown" },
+    { nome: "ciano", css: "cyan" }
 ];
 
-const selectedColors = colors.sort(() => 0.5 - Math.random()).slice(0, 9);
+const selectedColors = colors.sort(() => 0.5 - Math.random()).slice(0, 12);
 selectedColors.sort((a, b) => a.nome.localeCompare(b.nome)); 
 
 const secretColor = selectedColors[Math.floor(Math.random() * selectedColors.length)];
@@ -35,9 +37,13 @@ function checkColor(event) {
     const chosenColor = event.target.dataset.color;
     if (chosenColor === secretColor.nome) {
         messageDiv.textContent = `Parabéns! Você acertou! A cor é ${secretColor.nome.toUpperCase()}.`;
+        messageDiv.style.color = secretColor.css; 
+        messageDiv.className = "message success";
     } else {
         const hint = chosenColor < secretColor.nome ? "acima" : "abaixo";
         messageDiv.textContent = `Errou! A cor secreta está ${hint} na ordem alfabética.`;
+        messageDiv.style.color = "red"; 
+        messageDiv.className = "message error";
     }
 }
 

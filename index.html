@@ -9,28 +9,54 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
-            background-color: #f0f0f0;
+            background-color: #e0f7fa; /* Fundo suave e confortável (azul claro) */
         }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 100px);
+            grid-template-columns: repeat(4, 100px);
             grid-gap: 10px;
             justify-content: center;
         }
+
         .color-button {
             width: 100px;
             height: 100px;
-            border: 2px solid #333; 
+            border: 2px solid #333;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
+
         .color-button:hover {
-            transform: scale(1.1); 
+            transform: scale(1.1);
         }
+
         .message {
             margin-top: 20px;
             font-size: 18px;
             font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;            
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+        .color-highlight {
+            font-weight: normal;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 2px 5px;
+            margin: 0 5px;
+            border: 2px solid black;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -39,7 +65,6 @@
     <p>Escolha uma cor clicando em um quadrado:</p>
     <div class="grid" id="colorGrid"></div>
     <div class="message" id="message"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
